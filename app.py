@@ -88,7 +88,6 @@ def project(project_id):
 @app.route('/notes/<notes_id>')
 def notes(notes_id):
     all_files = {}
-    print(notes_id)
     if notes_id == 'physics_notes':
         if os.path.exists(PATH.PHYSICS_NOTES):
             for dir_name in os.listdir(PATH.PHYSICS_NOTES):
@@ -104,9 +103,9 @@ def notes(notes_id):
                 all_files[dir_name] = sort_files_by_sets_and_extension(files)
         return render_template('dct_notes.html', all_files=all_files, subject_name='dct')
     if notes_id == 'assembler_notes':
-        if os.path.exists(PATH.ASSEMBLER_REPORTS_NOTES):
-            for dir_name in os.listdir(PATH.ASSEMBLER_REPORTS):
-                dir_path = os.path.join(PATH.ASSEMBLER_REPORTS, dir_name)
+        if os.path.exists(PATH.ASSEMBLER_NOTES):
+            for dir_name in os.listdir(PATH.ASSEMBLER_NOTES):
+                dir_path = os.path.join(PATH.ASSEMBLER_NOTES, dir_name)
                 files = [f for f in os.listdir(dir_path) if os.path.isfile(os.path.join(dir_path, f))]
                 all_files[dir_name] = sort_files_by_sets_and_extension(files)
         return render_template('assembler_notes.html', all_files=all_files, subject_name='assembler')
