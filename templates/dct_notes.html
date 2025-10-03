@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c0pson</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="glitch" data-text="dct">dct</h1>
+            <nav class="nav-links">
+                <a href="{{ url_for('home') }}" class="glitch-link" data-text="home">home</a>
+            </nav>
+        </header>
+        <div class="ascii-art-container">
+            <pre class="ascii-art">
+                              #       #                                
+                  ##          ##     ##           ##                   
+             ######           #########            #####               
+         #########            #########            #########           
+      ############           ###########           ############        
+    ###############         #############         ###############      
+  ####################   ###################   ####################    
+ ###################################################################   
+#####################################################################  
+#####################################################################  
+#####################################################################  
+#####################################################################  
+ ###################################################################   
+   ##########       ####     ###########     ####       ###########    
+     #######                   #######                   ########      
+        #####                    ####                   ######         
+           ###                    ##                   ###
+            </pre>
+        </div>
+        <main class="content">
+            {% for semester, files in all_files.items() %}
+            <h2 class="glitch-subtitle" data-text="{{ semester.replace('sem', 'semester ') }}">{{ semester.replace('sem', 'semester ') }}</h2>
+            <ul class="subject-list">
+                {% for file in files %}
+                <li>
+                    <a href="{{ url_for('static', filename='dct_notes/' + semester + '/' + file) }}" 
+                       class="subject-link glitch-text" 
+                       data-text="{{ file }}" 
+                       download>
+                       {{ file }}
+                    </a>
+                </li>
+                {% else %}
+                <li class="no-files">no files found</li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        </main>
+    </div>
+</body>
+</html>

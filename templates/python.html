@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c0pson</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="glitch" data-text="python">python</h1>
+            <nav class="nav-links">
+                <a href="{{ url_for('home') }}" class="glitch-link" data-text="home">home</a>
+            </nav>
+        </header>
+        <main class="content">
+            <h2 class="glitch-subtitle" data-text="projects">projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <a href="https://7c2adecc.chessdocumentation.pages.dev/" class="project-link glitch-text" data-text="Chess">
+                        Chess
+                    </a>
+                    <div class="glitch-separator"></div>
+                    <p class="project-desc">Fully interactive chess implementation in customtkinter.</p>
+                </div>
+                <div class="project-card">
+                    <a href="#" class="project-link glitch-text" data-text="Screen Kitten">
+                        Screen Kitten
+                    </a>
+                    <div class="glitch-separator"></div>
+                    <p class="project-desc">Interactive screen pet. You can feed him and play with kitty walking on the screen.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

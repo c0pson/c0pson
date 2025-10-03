@@ -1,0 +1,7 @@
+/.mypy_cache
+/.venv
+/.vscode
+/__pycache__
+*.pdf
+static
+!static/*.css

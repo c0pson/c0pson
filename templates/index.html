@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c0pson</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="glitch" data-text="c0pson">c0pson</h1>
+            <nav class="nav-links">
+                <a href="#" class="glitch-link" data-text="home">home</a>
+                <a href="https://github.com/c0pson" class="glitch-link" data-text="github">github</a>
+            </nav>
+        </header>
+        <div class="ascii-art-container">
+            <pre class="ascii-art">
+                              #       #                                
+                  ##          ##     ##           ##                   
+             ######           #########            #####               
+         #########            #########            #########           
+      ############           ###########           ############        
+    ###############         #############         ###############      
+  ####################   ###################   ####################    
+ ###################################################################   
+#####################################################################  
+#####################################################################  
+#####################################################################  
+#####################################################################  
+ ###################################################################   
+   ##########       ####     ###########     ####       ###########    
+     #######                   #######                   ########      
+        #####                    ####                   ######         
+           ###                    ##                   ###
+            </pre>
+        </div>
+        <!-- <div class="manifesto">
+            <p class="glitch-text subtle-glitch" data-text="As university is just pain in the ass I want to make it easier for younger generations.">
+                As university is just pain in the ass I want to make it easier for younger generations.
+            </p>
+        </div> -->
+            <main class="content">
+            <h2 class="glitch-subtitle" data-text="projects">projects</h2>
+            <ul class="subject-list">
+                {% for project in projects %}
+                <li>
+                    <a href="{{ url_for('project', project_id=project.route) }}" 
+                        class="subject-link glitch-text" 
+                        data-text="{{ project.name }}">
+                        {{ project.name }}
+                        {% if project.get('has_files') %}
+                        <span class="file-indicator" data-text="[FILES]">[FILES]</span>
+                        {% endif %}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        
+            <h2 class="glitch-subtitle" data-text="reports">reports</h2>
+            <ul class="subject-list">
+                {% for subject in subjects %}
+                <li>
+                    <a href="{{ url_for('subject', subject_id=subject.route) }}"
+                       class="subject-link glitch-text"
+                       data-text="{{ subject.name }}">
+                        {{ subject.name }}
+                        {% if subject.get('has_files') %}
+                        <span class="file-indicator" data-text="[FILES]">[FILES]</span>
+                        {% endif %}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        
+            <h2 class="glitch-subtitle" data-text="notes">notes</h2>
+            <ul class="subject-list">
+                {% for note in notes %}
+                <li>
+                    <a href="{{ url_for('notes', notes_id=note.route) }}" 
+                       class="subject-link glitch-text" 
+                       data-text="{{ note.name }}">
+                        {{ note.name }}
+                        {% if note.get('has_files') %}
+                        <span class="file-indicator" data-text="[FILES]">[FILES]</span>
+                        {% endif %}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </main>
+    </div>
+</body>
+</html>

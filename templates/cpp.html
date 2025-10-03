@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c0pson</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="glitch" data-text="c++">c++</h1>
+            <nav class="nav-links">
+                <a href="{{ url_for('home') }}" class="glitch-link" data-text="home">home</a>
+            </nav>
+        </header>
+        <main class="content">
+            <h2 class="glitch-subtitle" data-text="projects">projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <a href="#" class="project-link glitch-text" data-text="Darwin">
+                        Darwin
+                    </a>
+                    <div class="glitch-separator"></div>
+                    <p class="project-desc">Simulation of evolution. Customizable population input, threshold of surveillance and dying of species.</p>
+                </div>
+                <div class="project-card">
+                    <a href="#" class="project-link glitch-text" data-text="Minesweeper">
+                        Minesweeper
+                    </a>
+                    <div class="glitch-separator"></div>
+                    <p class="project-desc">TUI minesweeper game. User can choose board size and play using system of coordinates.</p>
+                </div>
+                <div class="project-card">
+                    <a href="#" class="project-link glitch-text" data-text="Linked list">
+                        Linked list
+                    </a>
+                    <div class="glitch-separator"></div>
+                    <p class="project-desc">Linked list class holding integers with operator overriding and custom functions. Tested for memory leaks.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
